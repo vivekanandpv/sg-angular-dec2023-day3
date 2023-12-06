@@ -1,10 +1,23 @@
 import { Component } from '@angular/core';
+import { DataService } from './data.service';
+import { Observable } from 'rxjs';
+import { Person, PersonService } from './person.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'sg-angular-dec2023-day3';
+  person$?: Observable<Person>;
+  constructor(private personService: PersonService) {
+    this.person$ = this.personService.person$;
+  }
+
+  changeCity() {
+    this.personService.changeCity({
+      type: 'changeCity',
+      payload: 'New York',
+    });
+  }
 }

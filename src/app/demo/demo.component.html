@@ -1,0 +1,10 @@
+<h3>Demo Component</h3>
+
+<ng-container *ngIf="person$ | async as person">
+  <p>First Name: {{ person.firstName }}</p>
+  <p>Last Name: {{ person.lastName }}</p>
+  <p>Email: {{ person.email }}</p>
+  <p>City: {{ person.city }}</p>
+</ng-container>
+
+<p class="mt-4 text-primary">Full Name: {{ fullName$ | async }}</p>
