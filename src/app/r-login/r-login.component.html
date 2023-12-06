@@ -15,6 +15,9 @@
       <div class="form-text text-danger" *ngIf="username.hasError('email')">
         Enter the proper email
       </div>
+      <div class="form-text text-danger" *ngIf="username.hasError('my_error')">
+        Should be minimum 8 letters
+      </div>
     </ng-container>
   </div>
   <div class="mb-3">
@@ -36,6 +39,12 @@
       </div>
       <div class="form-text text-danger" *ngIf="password.hasError('pattern')">
         Password is should only be numbers
+      </div>
+      <div
+        class="form-text text-danger"
+        *ngIf="password.hasError('my_async_error')"
+      >
+        Password is should be minimum 8 characters
       </div>
     </ng-container>
   </div>
